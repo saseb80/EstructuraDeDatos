@@ -14,12 +14,13 @@ public:
 	int size;
 	ListaT();
 	void push_back(T val);
-	void push_front(T val);//10%
-	void push_at(T val, int index); //10%
+	void push_front(T val);
+	void push_at(T val, int index); 
 	NodoT<T>* get_at(int index);
-	void delete_at(int index); //10%
-	bool search(int val);//10%
-	void burbuja();//10%
+	void delete_at(int index); 
+	bool search(int val);
+	void burbuja();
+	void insertion();
 	void print();
 	void updateIndex();
 	~ListaT();
@@ -228,25 +229,21 @@ void ListaT<T>::burbuja() {
 		}
 	}
 	updateIndex();
+}
 
-	//NodoT<T> *it = first;
-	//NodoT<T> *it2 = first->next;
-	//while (it != NULL) {
-	//	
-	//	
-	//	 if (it->next->value <= it->value) {
-	//		tmp = it->next;
-	//		it->next = it->next->next;
-	//		tmp->next = it;		
-	//		/*it->next = it2->next;
-	//		it2->next = it;
-	//		tmp = it->next;
-	//		tmp2 = it2->next;
-	//		it = tmp2;
-	//		it2 = tmp;*/
-	//	}
-	//		it = it->next;
-	//}
+template<class T>
+void ListaT<T>::insertion(){
+	NodoT<T>* it = first;
+	NodoT<T>* firstSort = first;
+	NodoT<T>* lastSort;
+	while (it->next != NULL) {
+		if (it > it->next) {
+			tmp = it->next;
+			it->next = it->next->next;
+			tmp->next = it;
+		}
+	}
+	
 }
 
 template<class T>
