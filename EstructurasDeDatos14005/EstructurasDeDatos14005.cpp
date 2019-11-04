@@ -4,6 +4,7 @@
 #include "ListaT.h"
 #include "QueueT.h"
 #include "StackT.h"
+#include "TreeT.h"
 #include <cstddef>
 
 int main() {
@@ -12,21 +13,30 @@ int main() {
 	StackT<char> platos;
 	ListaT<int> desorden;
 
-
 	ListaT<int> ordenar;
 
-	ordenar.push_back(10);
+	TreeT<int> arboloide;
+
+	arboloide.insertn(1);
+	arboloide.insertn(2);
+	arboloide.insertn(3);
+	arboloide.insertn(4);
+	arboloide.insertn(5);
+	arboloide.insertn(6);
+
+  /*ordenar.push_back(10);
 	ordenar.push_back(1);
+	ordenar.push_back(4);
 	ordenar.push_back(8);
-	ordenar.push_back(9);
-	ordenar.push_back(3);
-	ordenar.push_back(5);
-	ordenar.push_back(0);
-	ordenar.push_back(1);
+	ordenar.push_back(12);
+	ordenar.push_back(15);
+	ordenar.push_back(2);
+	ordenar.push_back(7);
+	
 	ordenar.print();
 	std::cout << "--------I N S E R T I O N--S O R T------" << std::endl;
 	ordenar.insertion();
-	ordenar.print();
+	ordenar.print();*/
 
 	return 0;
 }

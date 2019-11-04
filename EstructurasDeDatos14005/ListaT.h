@@ -228,7 +228,7 @@ void ListaT<T>::insertion(){
 	first = prim;
 
 	while (it->next != NULL) {
-		//Primer caso en el que El primer nomber este desorted jaja xd
+		//Primer impacto en el que El primer nomber este desorted jaja xd
 		if (it->value > it->next->value && it == first) {
 			tmp = it->next;
 			it->next = it->next->next;
@@ -238,7 +238,6 @@ void ListaT<T>::insertion(){
 			prim = first;
 			lastSort = it;
 			prev = first;
-			print();
 			std::cout << "paso 1 completado" << std::endl;
 		}
 		//Segundo impacto, acomoda nombers excepto el ultimo
@@ -252,7 +251,6 @@ void ListaT<T>::insertion(){
 				tmp->next = firstSort->next;
 				firstSort->next = tmp;
 				firstSort = prim;
-				print();
 				std::cout << "2 Se inserto el numero en medio" << std::endl;
 			}
 			else {
@@ -261,7 +259,6 @@ void ListaT<T>::insertion(){
 				firstSort = tmp;
 				prim = tmp;
 				first = prim;
-				print();
 				std::cout << "2 Se inserto al inicio" << std::endl;
 			}
 		}
@@ -276,7 +273,6 @@ void ListaT<T>::insertion(){
 				tmp->next = firstSort->next;
 				firstSort->next = tmp;
 				firstSort = prim;
-				print();
 				std::cout << "3 se inserto en medio" << std::endl;
 			}
 			else {
@@ -285,7 +281,6 @@ void ListaT<T>::insertion(){
 				firstSort = tmp;
 				prim = tmp;
 				first = prim;
-				print();
 				std::cout << "3 se inserto al inicio" << std::endl;
 			}
 		}
@@ -294,12 +289,10 @@ void ListaT<T>::insertion(){
 			prev = it;
 			it = it->next;
 			lastSort = it;
-			print();
 			std::cout << "No habia uno menor adelante" << std::endl;
 		}
 	}
 	updateIndex();
-
 }
 
 template<class T>
