@@ -20,7 +20,7 @@ public:
 	void delete_at(int index); 
 	bool search(int val);
 	void burbuja();
-	void insertion();
+	void insertion(); //%60
 	void print();
 	void updateIndex();
 	~ListaT();
@@ -128,11 +128,6 @@ void ListaT<T>::push_at(T val, int index) {
 		if (index >= last->index && first != NULL) {
 			last->next = new NodoT<T>(val);
 			NodoT<T>* it = first; // se crea un "iterador"
-			//while (it != NULL) { // si el iterador no es nulo...		
-			//	it->index += 1;// se actualiza el iterador por el siguiente nodo en la lista
-			//	it = it->next;
-			//	// si it->next es null, entonces it será null, y se detendrá el While.
-			//}
 			updateIndex();
 			size++;
 		}
@@ -151,14 +146,6 @@ void ListaT<T>::push_at(T val, int index) {
 			size++;
 		}
 	}
-	//Acomoda los indices asi bien chidos xd
-	/*NodoT<T>* itr = first;
-	int n = -1;
-	while (itr != NULL) {
-		n = n + 1;
-		itr->index = n;
-		itr = itr->next;
-	}*/
 	updateIndex();
 }
 
@@ -234,16 +221,85 @@ void ListaT<T>::burbuja() {
 template<class T>
 void ListaT<T>::insertion(){
 	NodoT<T>* it = first;
+	NodoT<T>* prev = NULL;
 	NodoT<T>* firstSort = first;
-	NodoT<T>* lastSort;
+	NodoT<T>* lastSort = first;
+	NodoT<T>* prim = first;
+	first = prim;
+
 	while (it->next != NULL) {
-		if (it > it->next) {
+		//Primer caso en el que El primer nomber este desorted jaja xd
+		if (it->value > it->next->value && it == first) {
 			tmp = it->next;
 			it->next = it->next->next;
-			tmp->next = it;
+			tmp->next = it;		
+			first = tmp;
+			firstSort = first;
+			prim = first;
+			lastSort = it;
+			prev = first;
+			print();
+			std::cout << "paso 1 completado" << std::endl;
+		}
+		//Segundo impacto, acomoda nombers excepto el ultimo
+		else if (it->value > it->next->value && it != first && it->next->next != NULL) {
+			tmp = it->next;
+			if (it->next->value > firstSort->value) {
+				while (it->next->value > firstSort->next->value) {
+					firstSort = firstSort->next;
+				}
+				it->next = it->next->next;
+				tmp->next = firstSort->next;
+				firstSort->next = tmp;
+				firstSort = prim;
+				print();
+				std::cout << "2 Se inserto el numero en medio" << std::endl;
+			}
+			else {
+				it->next = it->next->next;
+				tmp->next = prim;
+				firstSort = tmp;
+				prim = tmp;
+				first = prim;
+				print();
+				std::cout << "2 Se inserto al inicio" << std::endl;
+			}
+		}
+		//Tercer impacto, acomoda el ultimo numero 
+		else if (it->value > it->next->value && it != first && it->next->next == NULL) {
+			tmp = it->next;
+			if (it->next->value > firstSort->value) {
+				while (it->next->value > firstSort->next->value) {
+					firstSort = firstSort->next;
+				}
+				it->next = NULL;
+				tmp->next = firstSort->next;
+				firstSort->next = tmp;
+				firstSort = prim;
+				print();
+				std::cout << "3 se inserto en medio" << std::endl;
+			}
+			else {
+				it->next = NULL;
+				tmp->next = prim;
+				firstSort = tmp;
+				prim = tmp;
+				first = prim;
+				print();
+				std::cout << "3 se inserto al inicio" << std::endl;
+			}
+		}
+		//Si esta acomodao entonces nuase nancy (siperono) XD
+		else {
+			prev = it;
+			it = it->next;
+			lastSort = it;
+			print();
+			std::cout << "No habia uno menor adelante" << std::endl;
 		}
 	}
-	
+	updateIndex();
+
 }
 
 template<class T>
