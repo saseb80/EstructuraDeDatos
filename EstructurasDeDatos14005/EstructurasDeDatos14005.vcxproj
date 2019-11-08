@@ -152,15 +152,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ListaT.h" />
+    <ClInclude Include="NodoA.h" />
     <ClInclude Include="NodoT.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="QueueT.h" />
     <ClInclude Include="StackT.h" />
+    <ClInclude Include="TreeB.h" />
     <ClInclude Include="TreeT.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EstructurasDeDatos14005.cpp" />
     <ClCompile Include="ListaT.cpp" />
+    <ClCompile Include="NodoA.cpp" />
     <ClCompile Include="NodoT.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -170,6 +173,7 @@
     </ClCompile>
     <ClCompile Include="QueueT.cpp" />
     <ClCompile Include="StackT.cpp" />
+    <ClCompile Include="TreeB.cpp" />
     <ClCompile Include="TreeT.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

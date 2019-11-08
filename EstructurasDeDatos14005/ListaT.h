@@ -20,7 +20,7 @@ public:
 	void delete_at(int index); 
 	bool search(int val);
 	void burbuja();
-	void insertion(); //%60
+	void insertion(); 
 	void print();
 	void updateIndex();
 	~ListaT();
