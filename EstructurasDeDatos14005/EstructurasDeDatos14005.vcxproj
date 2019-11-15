@@ -151,8 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Grafo.h" />
+    <ClInclude Include="Lista.h" />
     <ClInclude Include="ListaT.h" />
     <ClInclude Include="NodoA.h" />
+    <ClInclude Include="NodoG.h" />
     <ClInclude Include="NodoT.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="QueueT.h" />
@@ -162,8 +165,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EstructurasDeDatos14005.cpp" />
+    <ClCompile Include="Grafo.cpp" />
+    <ClCompile Include="Lista.cpp" />
     <ClCompile Include="ListaT.cpp" />
     <ClCompile Include="NodoA.cpp" />
+    <ClCompile Include="NodoG.cpp" />
     <ClCompile Include="NodoT.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
