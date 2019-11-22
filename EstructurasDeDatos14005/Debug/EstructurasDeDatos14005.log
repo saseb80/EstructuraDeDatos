@@ -1,4 +1,5 @@
 ﻿  EstructurasDeDatos14005.cpp
-  TreeB.cpp
+c:\tareas\estructuradedatos\estructurasdedatos14005\grafo.h(51): error C2760: syntax error: unexpected token '}', expected 'expression'
+  Grafo.cpp
+c:\tareas\estructuradedatos\estructurasdedatos14005\grafo.h(51): error C2760: syntax error: unexpected token '}', expected 'expression'
   Generating Code...
-  EstructurasDeDatos14005.vcxproj -> C:\Tareas\EstructuraDeDatos\Debug\EstructurasDeDatos14005.exe

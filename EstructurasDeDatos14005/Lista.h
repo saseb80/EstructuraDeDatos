@@ -1,25 +1,26 @@
 #pragma once
+#include "NodoT.h"
 #include <iostream>
 
 template<class T>
 class Lista
 {
 public:
-	NodoG<T>* first;
-	NodoG<T>* last;
-	NodoG<T>* tmp;
-	NodoG<T>* tmp2;
+	Lista();	
+	NodoT<T>* first;
+	NodoT<T>* last;
+	NodoT<T>* tmp;
+	NodoT<T>* tmp2;
 	int size;
 	void push_back(T val);
 	void push_front(T val);
 	void push_at(T val, int index);
 	void updateIndex();
-	Lista();	
-	~Lista();
 	//NodoG<T>* get_at(int index);
-	//void delete_at(int index);
-	/*bool search(int val);
-	void print();*/
+	void delete_at(int index);
+	/*bool search(int val);*/
+	void print();
+	~Lista();
 };
 
 template<class T>
@@ -36,21 +37,21 @@ Lista<T>::~Lista() {
 template<class T>
 void Lista<T>::push_back(T val) {
 	if (first == NULL) { // la lista está completamente vacía
-			first = new NodoG<T>(val);
+			first = new NodoT<T>(val);
 			last = first; // el primero y el último son el mismo
 			first->index = 0;
 			size++;
 	}
 	else {
 		if (first == last) { // sólo hay un elemento en la lista
-				last = new NodoG<T>(val); // last ahora es diferente
+				last = new NodoT<T>(val); // last ahora es diferente
 				first->next = last; // el siguiente de first ahora es el nuevo nodo
 				first->index = 0;
 				first->next->index = 1;
 				size++;
 		}
 		else { // hay 2 o más elementos en la lista
-				last->next = new NodoG<T>(val); // last->next era null, ahora es un nodo
+				last->next = new NodoT<T>(val); // last->next era null, ahora es un nodo
 				last->next->index = last->index + 1;
 				last = last->next; // last ahora es el nodo nuevo
 				size++;
@@ -63,14 +64,14 @@ void Lista<T>::push_back(T val) {
 template<class T>
 void Lista<T>::push_front(T val){
 	if (first == NULL) { // la lista está completamente vacía
-		first = new NodoG<T>(val);
+		first = new NodoT<T>(val);
 		last = first; // el primero y el último son el mismo
 		size++;
 	}
 	else {
 		if (first == last) { // sólo hay un elemento en la lista
 			tmp = first;
-			first = new NodoG<T>(val); // last ahora es diferente
+			first = new NodoT<T>(val); // last ahora es diferente
 			first->next = last; // el siguiente de first ahora es el nuevo nodo
 			first->index = 0;
 			last->index = 1;
@@ -78,10 +79,10 @@ void Lista<T>::push_front(T val){
 		}
 		else { // hay 2 o más elementos en la lista
 			tmp = first;
-			first = new NodoG<T>(val); // last->next era null, ahora es un nodo
+			first = new NodoT<T>(val); // last->next era null, ahora es un nodo
 			first->next = tmp; // last ahora es el nodo nuevo					
 			first->index = -1;
-			NodoG<T>* it = first; // se crea un "iterador"
+			NodoT<T>* it = first; // se crea un "iterador"
 			while (it != NULL) { // si el iterador no es nulo...		
 				it->index += 1;// se actualiza el iterador por el siguiente nodo en la lista
 				it = it->next;
@@ -97,7 +98,7 @@ void Lista<T>::push_front(T val){
 template<class T>
 void Lista<T>::push_at(T val, int index) {
 	if (first == NULL) {
-		first = new NodoG<T>(val);
+		first = new NodoT<T>(val);
 		last = first;
 		first->index = 0;
 		size++;
@@ -105,24 +106,24 @@ void Lista<T>::push_at(T val, int index) {
 	else {
 		if (index == 0 && first != NULL) {
 			tmp = first;
-			first = new NodoG<T>(val);
+			first = new NodoT<T>(val);
 			first->next = tmp;
 			size++;
 		}
 		if (index >= last->index && first != NULL) {
-			last->next = new NodoG<T>(val);
-			NodoG<T>* it = first; // se crea un "iterador"
+			last->next = new NodoT<T>(val);
+			NodoT<T>* it = first; // se crea un "iterador"
 			updateIndex();
 			size++;
 		}
 		if (index != first->index && index != last->index) {
 			int contador = 0;
-			NodoG<T>* it = first; // se crea un "iterador"
+			NodoT<T>* it = first; // se crea un "iterador"
 			while (it != NULL) { // si el iterador no es nulo...	
 				contador = contador + 1;
 				if (contador == index) {
 					tmp = it->next;
-					it->next = new NodoG<T>(val);
+					it->next = new NodoT<T>(val);
 					it->next->next = tmp;
 				}
 				it = it->next;
@@ -149,7 +150,7 @@ void Lista<T>::delete_at(int index) {
 
 		if (index != first->index && index != last->index) {
 			int contador = 0;
-			NodoG<T>* it = first; // se crea un "iterador"
+			NodoT<T>* it = first; // se crea un "iterador"
 			while (it != NULL) { // si el iterador no es nulo...	
 				contador = contador + 1;
 				if (contador == index) {
@@ -164,12 +165,21 @@ void Lista<T>::delete_at(int index) {
 
 template<class T>
 void Lista<T>::updateIndex() {
-	NodoG<T>* itr = first;
+	NodoT<T>* itr = first;
 	int n = -1;
 	while (itr != NULL) {
 		n = n + 1;
 		itr->index = n;
 		itr = itr->next;
+	}
+}
+
+template <class T>
+void Lista<T>::print() {
+	NodoT<T>* it = first;
+	while (it != NULL) {
+		std::cout << it->value << "----->" << it->index << std::endl;
+		it = it->next;
 	}
 }
 

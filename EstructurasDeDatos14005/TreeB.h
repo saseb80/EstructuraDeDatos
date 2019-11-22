@@ -98,20 +98,6 @@ void TreeB<T>::Insert(T val) {
 			}
 		}
 	}
-	
-	root->value; //10
-	root->izq->value; // 6
-	root->der->value; // 12
-	root->izq->izq->value; // 3
-	root->der->der->value; // 25
-	root->izq->izq->izq->value; // 3
-	root->izq->der->value; // 8
-	root->der->der->izq->value; // 22
-	root->der->der->izq->izq->value; // 16
-	root->izq->izq->der->value; // 4
-	root->der->der->der->value;
-	
-
 }
 
 
