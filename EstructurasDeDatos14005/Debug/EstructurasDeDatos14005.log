@@ -1,5 +1,17 @@
 ﻿  EstructurasDeDatos14005.cpp
-c:\tareas\estructuradedatos\estructurasdedatos14005\grafo.h(51): error C2760: syntax error: unexpected token '}', expected 'expression'
+C:\EstructuraDeDatos\EstructurasDeDatos14005\Grafo.h(54,1): error C2228:  el operando izquierdo de '.it' debe tener class/struct/union
+C:\EstructuraDeDatos\EstructurasDeDatos14005\Grafo.h(54,1): message :  el tipo es 'NodoT<T> *'
+C:\EstructuraDeDatos\EstructurasDeDatos14005\Grafo.h(54,1): message :         with
+C:\EstructuraDeDatos\EstructurasDeDatos14005\Grafo.h(54,1): message :         [
+C:\EstructuraDeDatos\EstructurasDeDatos14005\Grafo.h(54,1): message :             T=int
+C:\EstructuraDeDatos\EstructurasDeDatos14005\Grafo.h(54,1): message :         ]
+C:\EstructuraDeDatos\EstructurasDeDatos14005\Grafo.h(54,1): message :  ¿deseaba utilizar '->' en su lugar?
+C:\EstructuraDeDatos\EstructurasDeDatos14005\Grafo.h(50): message :  al compilar la función del miembro clase plantilla "void Grafo<int>::ImprimeGrafo(void)"
+C:\EstructuraDeDatos\EstructurasDeDatos14005\EstructurasDeDatos14005.cpp(29): message :  vea la referencia a la creación de instancias de plantilla de función "void Grafo<int>::ImprimeGrafo(void)" que se está compilando
   Grafo.cpp
-c:\tareas\estructuradedatos\estructurasdedatos14005\grafo.h(51): error C2760: syntax error: unexpected token '}', expected 'expression'
-  Generating Code...
+  Lista.cpp
+  ListaT.cpp
+  NodoG.cpp
+  TreeT.cpp
+  Generando código...
+C:\EstructuraDeDatos\EstructurasDeDatos14005\EstructurasDeDatos14005.cpp(11): message :  vea la referencia a la creación de instancias de clase plantilla "Grafo<int>" que se está compilando

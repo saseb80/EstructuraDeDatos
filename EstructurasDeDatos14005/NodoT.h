@@ -13,15 +13,21 @@ public:
 	NodoT<T>* right;
 	NodoT<T>* left;
 	NodoT<T>* papa;
-
+	
+	NodoT<T> nodo();
 
 	int index;
-	NodoT(T v) : value(v) {
+	NodoT(T v) : value(v){
 		next = NULL;
 		index = -1;
 	}
 	NodoT() {}
 	~NodoT() {}
 };
+template<class T>
+NodoT<T> NodoT<T>::nodo() {
+	NodoT<T> test;
+	return test;
+}
 
 

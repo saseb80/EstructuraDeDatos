@@ -1,12 +1,14 @@
 #include "NodoG.h"
+#include "NodoT.h"
 
 template <class T>
 class Grafo {
 public:
+	NodoT<T>* first;
 	Lista<NodoG<T>*> padres;
-
 	Grafo();
 
+	void getNodo(NodoG<T>* nodo);
 	void InsertaNodo(T data, NodoG<T>* padre); // 25% inserta un nodo agregando el apuntador a la lista de hijos del padre
 
 	NodoG<T>* BuscaNodo(T data); // 25% busca un nodo por su data y regresa el apuntador al nodo si es que lo encuentra
@@ -20,14 +22,13 @@ public:
 
 template<class T>
 Grafo<T>::Grafo() {
-	padres = 0;
+	padres;
 }
 
 template<class T>
 void Grafo<T>::InsertaNodo(T data, NodoG<T>* padre){
 	NodoG<T>* hijo = new NodoG<T>(data);
 	padre->l.push_back(hijo);
-
 	hijo->papa = padre;
 }
 
@@ -47,6 +48,11 @@ void Grafo<T>::EliminaNodo(T data) {
 }
 
 template<class T>
+void Grafo<T>::getNodo(NodoG<T>* nodo) {
+
+}
+
+template<class T>
 void Grafo<T>::ImprimeGrafo() {
-	NodoG<T>* it = ;
+	
 }

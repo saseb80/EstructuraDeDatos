@@ -16,6 +16,7 @@ public:
 	void push_front(T val);
 	void push_at(T val, int index);
 	void updateIndex();
+	void printG();
 	//NodoG<T>* get_at(int index);
 	void delete_at(int index);
 	/*bool search(int val);*/
@@ -182,6 +183,7 @@ void Lista<T>::print() {
 		it = it->next;
 	}
 }
+
 
 //template<class T>
 //NodoG<T>* Lista<T>::get_at(int index){
