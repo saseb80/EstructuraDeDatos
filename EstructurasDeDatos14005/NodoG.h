@@ -25,7 +25,6 @@ NodoG<T>::NodoG(T dat) {
 	papa = nullptr;
 	nodoData = dat;
 	visited = false;
-	l;
 }
 
 template<class T>

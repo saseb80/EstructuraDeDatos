@@ -22,7 +22,6 @@ public:
 
 template<class T>
 Grafo<T>::Grafo() {
-	padres;
 }
 
 template<class T>
@@ -54,5 +53,10 @@ void Grafo<T>::getNodo(NodoG<T>* nodo) {
 
 template<class T>
 void Grafo<T>::ImprimeGrafo() {
-	
+	//NodoT<T>* it = padres.first;
+	/*NodoT<T>* ito = first;
+	while (it != nullptr) {
+		it->l.print();
+		it = it->next;
+	}*/
 }

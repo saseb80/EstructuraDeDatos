@@ -27,11 +27,11 @@ int main(){
 	perro.InsertaNodo(4, padre2);
 	perro.InsertaNodo(3, padre2);
 	perro.ImprimeGrafo();
-	std::cout << perro.padres.size<<std::endl;
+	/*std::cout << perro.padres.size<<std::endl;
 	std::cout << padre->l.size<<std::endl;
 	std::cout << padre2->l.size<<std::endl;
-	padre->l.print();
-
+	padre->l.print();*/
+	perro.ImprimeGrafo();
 	//padre->l.print();
 	/*Lista<int> L;
 	NodoG<int> n(3);
